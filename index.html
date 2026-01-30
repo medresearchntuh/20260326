@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 講座資訊開始 -->
+    <title>【雙專題演講】Advancing Precision Medicine: Innovations in Long-Read Sequencing - 報名表</title>
+    <!-- 講座資訊結束 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif; background-color: #f8fafc; }
+        .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .form-input:focus { box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        .lecture-header-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .logo-img { height: 32px; width: auto; max-width: 180px; object-fit: contain; }
+        @media (min-width: 768px) { .logo-img { height: 38px; max-width: 220px; } }
+        #floatingMenuContainer { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; transform: scale(0.9) translateY(20px); pointer-events: none; }
+        #floatingMenuContainer.active { opacity: 1; transform: scale(1) translateY(0); pointer-events: auto; }
+        .invalid-input { border-color: #f87171 !important; background-color: #fef2f2; }
+        .invalid-msg { color: #dc2626; font-size: 0.75rem; margin-top: 0.25rem; display: none; }
+        .conditional-field { display: none; }
+        #summaryContent { max-height: 8rem; overflow: hidden; transition: max-height 0.5s ease; position: relative; }
+        #summaryContent.expanded { max-height: 2000px; }
+        #summaryGradient { position: absolute; bottom: 0; left: 0; width: 100%; height: 2.5rem; background: linear-gradient(to top, white, rgba(255, 255, 255, 0)); pointer-events: none; transition: opacity 0.3s; }
+        #summaryContent.expanded #summaryGradient { opacity: 0; }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen">
+    <!-- 右側浮動按鈕 -->
+    <div class="fixed right-6 bottom-10 z-50 flex flex-col items-end">
+        <div id="floatingMenuContainer" class="flex flex-col gap-3 mb-4">
+            <a href="https://www.ntuh.gov.tw/LARD/Index.action" target="_blank" class="flex items-center bg-white text-blue-700 px-5 py-3 rounded-2xl shadow-xl border border-blue-50 hover:bg-blue-50 transition-all group">
+                <span class="font-bold mr-3 text-sm text-blue-800">官方網站</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </a>
+            <a href="https://www.facebook.com/ntuhlard" target="_blank" class="flex items-center bg-white text-[#1877F2] px-5 py-3 rounded-2xl shadow-xl border border-blue-50 hover:bg-blue-50 transition-all group">
+                <span class="font-bold mr-3 text-sm text-[#1877F2]">官方 FB</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+        </div>
+        <button id="globeToggleBtn" class="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-blue-700 active:scale-95 transition-all ring-4 ring-blue-100 focus:outline-none">
+            <svg id="globeIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6">
+        <header class="flex flex-col md:flex-row items-center justify-between mb-8 gap-6">
+            <div class="flex items-center gap-4 md:gap-5 w-full md:w-auto justify-center md:justify-start">
+                <img src="https://i.meee.com.tw/mYSMqrN.png" alt="Logo" class="logo-img">
+                <div class="h-8 w-px bg-slate-200 hidden md:block"></div>
+                <div class="text-center md:text-left">
+                    <h1 class="text-lg md:text-xl font-bold text-slate-900 leading-none">專題演講報名系統</h1>
+                    <p class="text-[10px] text-slate-500 mt-1.5 font-medium tracking-wide">台大醫院 醫學研究部 規劃訓練組</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center md:items-end gap-1.5">
+                <div class="flex flex-wrap justify-center md:justify-end items-center gap-x-4 gap-y-1 text-[11px] text-slate-400">
+                    <span class="flex items-center font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>陳巧瑜管理師</span>
+                    <a href="mailto:summerchen@ntuh.gov.tw" class="hover:text-blue-600 flex items-center transition-colors font-medium text-[11px]"><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>summerchen@ntuh.gov.tw</a>
+                </div>
+                <p class="text-[9px] text-slate-300 font-mono tracking-wider text-right">NTUH DMR RESEARCH SEMINAR</p>
+            </div>
+        </header>
+
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-200/60 mb-8 overflow-hidden">
+            <div class="lecture-header-gradient px-6 py-3 flex justify-between items-center">
+                <h2 class="text-xs font-bold text-white flex items-center tracking-wider uppercase whitespace-nowrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 mr-2 opacity-80 text-blue-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>講座摘要 Summary
+                </h2>
+                <span class="text-[9px] bg-white/20 text-white px-2 py-0.5 rounded-full shrink-0">2 Sessions</span>
+            </div>
+            <div class="p-6 md:p-8">
+                <!-- 主講題 -->
+                <div class="mb-6">
+                    <label class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1 block">Main Title</label>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 leading-tight">Advancing Precision Medicine: Innovations in Long-Read Sequencing</h2>
+                </div>
+
+                <!-- 總體資訊 -->
+                <div class="mb-8 pb-6 border-b border-slate-100 flex flex-wrap gap-y-4 gap-x-12">
+                    <div class="space-y-1"><label class="text-[9px] font-bold text-blue-600 uppercase flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>時間</label><p class="text-sm text-slate-700 font-bold">2026/03/26 (四) 10:00 - 11:00</p></div>
+                    <div class="space-y-1"><label class="text-[9px] font-bold text-blue-600 uppercase flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>地點</label><p class="text-sm text-slate-700 font-bold">台大醫學院202講堂</p></div>
+                    <div class="space-y-1"><label class="text-[9px] font-bold text-rose-500 uppercase flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>截止</label><p class="text-sm text-rose-600 font-bold">2026/03/20 (五) 17:00 止</p></div>
+                </div>
+
+                <!-- Session A -->
+                <div class="mb-8">
+                    <span class="text-[9px] font-bold px-2 py-0.5 bg-blue-600 text-white rounded mb-2 inline-block">Session A</span>
+                    <h3 class="text-lg font-bold text-slate-800 leading-snug mb-3">Proof-of-Concept to Patient Impact: Clinical Nanopore Implementation</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <div><label class="text-[9px] text-slate-400 font-bold">講者 Speaker</label><p class="text-sm font-bold text-slate-700">Dr. Thidathip Wongsurawat</p></div>
+                        <div><label class="text-[9px] text-slate-400 font-bold">講者單位 Organization</label><p class="text-[11px] text-slate-500 font-medium">Siriraj Long-read Lab, Faculty of Medicine Siriraj Hospital, Mahidol University, Thailand</p></div>
+                    </div>
+                </div>
+
+                <!-- Session B -->
+                <div class="mb-8">
+                    <span class="text-[9px] font-bold px-2 py-0.5 bg-indigo-600 text-white rounded mb-2 inline-block">Session B</span>
+                    <h3 class="text-lg font-bold text-slate-800 leading-snug mb-3">Understand cancer predisposition in Singapore using long read WGS and adaptive sampling</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <div><label class="text-[9px] text-slate-400 font-bold">講者 Speaker</label><p class="text-sm font-bold text-slate-700">Dr. Alvin Wei Tian Ng</p></div>
+                        <div><label class="text-[9px] text-slate-400 font-bold">講者單位 Organization</label><p class="text-[11px] text-slate-500 font-medium">Nanyang Technological University, Singapore</p></div>
+                    </div>
+                </div>
+
+                <!-- 摘要內容 -->
+                <div class="mt-6 pt-6 border-t border-slate-100">
+                    <label class="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-2 block font-mono">Lecture Abstracts / 內容摘要</label>
+                    <div id="summaryContent" class="text-xs leading-relaxed text-slate-600 space-y-4">
+                        <div>
+                            <p class="font-bold text-blue-800 mb-1">[Session A Abstract]</p>
+                            Oxford Nanopore long-read sequencing is moving from research into patient care in Thailand. We outline an implementation pathway spanning sample-to-report workflows, including assay selection, analytical validation, quality management, and clinical reporting. Clinical use cases include pharmacogenomics, cancer classification, and rapid pathogen detection. Key enablers of success include multidisciplinary collaboration among clinicians, laboratory scientists, bioinformaticians, and industry partners, alongside training and technology transfer to build local capacity. Early deployment suggests that streamlined library preparation, scalable analysis pipelines, and clearly defined interpretation criteria can reduce turnaround time and support precision medicine. In this talk, we share practical lessons learned, enabling factors, and approaches that helped translate Nanopore into routine clinical workflows.
+                        </div>
+                        <div id="summaryGradient"></div>
+                    </div>
+                    <button id="summaryToggleBtn" class="mt-2 text-blue-600 text-[11px] font-bold hover:text-blue-800 transition-colors flex items-center"><span id="toggleBtnText">閱讀全文 READ MORE</span><svg id="toggleBtnIcon" xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 ml-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></button>
+                </div>
+                
+                <div class="mt-6 pt-5 border-t border-slate-50 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-0.5"><label class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">主辦單位 Organizer</label><p class="text-[11px] text-slate-500 font-medium">台大醫院 醫學研究部</p></div>
+                    <div class="space-y-0.5 md:text-right"><label class="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">承辦窗口 Contact</label><p class="text-[11px] text-slate-500 font-medium">醫學研究部 陳巧瑜管理師 (分機 #263254)</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 報名資訊表單 -->
+        <main class="bg-white rounded-3xl shadow-xl border border-slate-200/60 overflow-hidden">
+            <div class="p-8 md:p-12">
+                <div class="mb-10 text-center md:text-left">
+                    <h2 class="text-lg font-bold text-slate-900 flex items-center justify-center md:justify-start">
+                        <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center mr-3 shadow-lg shadow-blue-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        </span>
+                        報名資訊 Registration
+                    </h2>
+                    <p class="text-slate-400 text-[11px] mt-2 md:ml-10 tracking-tight">請填寫正確資料，承辦單位將於演講前三天寄出提醒信。</p>
+                </div>
+                <form id="registrationForm" class="space-y-7">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+                        <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">姓名 Name <span class="text-rose-500">*</span></label><input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none transition-all text-sm form-input"></div>
+                        <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">聯絡電話 Phone <span class="text-rose-500">*</span></label><input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none transition-all text-sm form-input"></div>
+                    </div>
+                    <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">電子信箱 Email <span class="text-rose-500">*</span></label><input type="email" name="email" id="field_email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none transition-all text-sm form-input"><p id="emailError" class="invalid-msg">Email 格式無效</p></div>
+                    <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">任職機構 Organization <span class="text-rose-500">*</span></label>
+                        <div class="relative"><select id="organization" name="organization" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none cursor-pointer text-sm form-input appearance-none">
+                            <option value="">請選擇</option><option value="台大醫院">台大醫院 (總院)</option><option value="台大醫院癌醫分院">台大醫院癌醫分院</option><option value="台大醫院金山分院">台大醫院金山分院</option><option value="台大醫院北護分院">台大醫院北護分院</option><option value="台大醫院新竹台大分院">台大醫院新竹台大分院</option><option value="台大醫院雲林分院">台大醫院雲林分院</option><option value="台大醫學院">台大醫學院</option><option value="台大公衛學院">台大公衛學院</option><option value="台大校總區">台大校總區</option><option value="校外人士">校外人士</option>
+                        </select><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></div>
+                    </div>
+                    
+                    <!-- 完整科部選單 -->
+                    <div id="deptSection" class="conditional-field space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">任職科部 <span class="text-rose-500">*</span></label>
+                        <div class="relative"><select id="department" name="department" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none text-sm form-input appearance-none">
+                            <option value="">請選擇</option><option value="小兒部">小兒部</option><option value="工務室">工務室</option><option value="內科部">內科部</option><option value="公共事務室">公共事務室</option><option value="分級醫療管理中心">分級醫療管理中心</option><option value="心血管中心">心血管中心</option><option value="牙科部">牙科部</option><option value="主計室">主計室</option><option value="外科部">外科部</option><option value="失智共同照護中心">失智共同照護中心</option><option value="皮膚部">皮膚部</option><option value="企劃管理部">企劃管理部</option><option value="安全衛生室">安全衛生室</option><option value="尖端醫療發展中心">尖端醫療發展中心</option><option value="老年醫學部">老年醫學部</option><option value="耳鼻喉部">耳鼻喉部</option><option value="肝炎研究中心">肝炎研究中心</option><option value="兒童醫院">兒童醫院</option><option value="受試者保護中心">受試者保護中心</option><option value="泌尿部">泌尿部</option><option value="物理治療中心">物理治療中心</option><option value="社會工作室">社會工作室</option><option value="金山分院">金山分院</option><option value="門診部">門診部</option><option value="品質管理中心">品質管理中心</option><option value="急診醫學部">急診醫學部</option><option value="倫理中心">倫理中心</option><option value="家庭醫學部">家庭醫學部</option><option value="核子醫學部">核子醫學部</option><option value="病理部">病理部</option><option value="病歷資訊管理室">病歷資訊管理室</option><option value="神經部">神經部</option><option value="秘書室">秘書室</option><option value="骨科部">骨科部</option><option value="健康教育中心">健康教育中心</option><option value="健康管理中心">健康管理中心</option><option value="國際醫療中心">國際醫療中心</option><option value="基因醫學部">基因醫學部</option><option value="婦產部">婦產部</option><option value="教學部">教學部</option><option value="眼科部">眼科部</option><option value="麻醉部">麻醉部</option><option value="創傷醫學部">創傷醫學部</option><option value="復健部">復健部</option><option value="智慧醫療中心">智慧醫療中心</option><option value="感染管制中心">感染管制中心</option><option value="腫瘤醫學部">腫瘤醫學部</option><option value="資訊室">資訊室</option><option value="圖書室">圖書室</option><option value="精神醫學部">精神醫學部</option><option value="綜合診療部">綜合診療部</option><option value="臺大醫療體系管理發展中心">臺大醫療體系管理發展中心</option><option value="輔助暨整合醫學中心">輔助暨整合醫學中心</option><option value="影像醫學部">影像醫學部</option><option value="檢驗醫學部">檢驗醫學部</option><option value="營養室">營養室</option><option value="環境及職業醫學部">環境及職業醫學部</option><option value="癌症防治中心">癌症防治中心</option><option value="總務室">總務室</option><option value="臨床心理中心">臨床心理中心</option><option value="醫學工程部">醫學工程部</option><option value="醫學研究部">醫學研究部</option><option value="醫療事務室">醫療事務室</option><option value="藥劑部">藥劑部</option><option value="護理部">護理部</option><option value="其他">其他</option>
+                        </select><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></div>
+                    </div>
+
+                    <div id="unitSection" class="conditional-field space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">任職單位 Unit <span class="text-rose-500">*</span></label><input type="text" id="unitInput" name="unit" placeholder="請註明" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none text-sm form-input"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+                        <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">身分 Position <span class="text-rose-500">*</span></label><div class="relative"><select id="position" name="position" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none text-sm form-input appearance-none">
+                            <option value="">請選擇</option><option value="主治醫師">主治醫師</option><option value="住院醫師">住院醫師</option><option value="護理人員">護理人員</option><option value="醫事人員">醫事人員</option><option value="行政人員">行政人員</option><option value="研究員">研究員</option><option value="研究助理">研究助理</option><option value="醫學院教師">醫學院教師</option><option value="校總區教師">校總區教師</option><option value="醫學院學生">醫學院學生</option><option value="校總區學生">校總區學生</option><option value="其他身分">其他身分</option>
+                        </select><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></div><div id="otherPositionSection" class="conditional-field mt-2"><input type="text" id="otherPositionInput" name="otherPosition" placeholder="請註明身分" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none"></div></div>
+                        <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">講座獲得管道 Source <span class="text-rose-500">*</span></label><div class="relative"><select id="infoSource" name="infoSource" required class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none text-sm form-input appearance-none">
+                            <option value="">請選擇</option><option value="醫院全院公告信">醫院全院公告信</option><option value="醫學院全院公告信/最新消息">醫學院全院公告信/最新消息</option><option value="醫學校區演講公告">醫學校區演講公告</option><option value="醫研部網站/FB粉專">醫研部網站/FB粉專</option><option value="口耳相傳">口耳相傳</option><option value="其他">其他</option>
+                        </select><svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg></div><div id="otherSourceSection" class="conditional-field mt-2"><input type="text" id="otherSourceInput" name="otherSource" placeholder="請註明管道" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm outline-none"></div></div>
+                    </div>
+                    
+                    <div class="space-y-2"><label class="text-xs font-bold text-slate-700 ml-1">問題與建議 Questions</label><textarea name="comments" rows="3" placeholder="如有任何問題或建議，我們將於講座中討論。" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/30 focus:border-blue-500 focus:bg-white outline-none transition-all resize-none text-sm form-input"></textarea></div>
+                    
+                    <div class="pt-4"><button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-xl shadow-blue-200 transform text-sm tracking-widest flex items-center justify-center uppercase font-medium">提交報名表 SUBMIT</button></div>
+                </form>
+                <div id="messageBox" class="mt-8 hidden p-8 rounded-3xl border border-slate-200 glass-card text-sm leading-relaxed text-center"></div>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 mb-8"><p class="text-slate-400 text-[10px] uppercase tracking-tighter">&copy; 2026 台大醫院 醫學研究部. All rights reserved.</p></footer>
+    </div>
+
+    <script>
+        const SCRIPT_URL = ""; 
+        const elements = {
+            form: document.getElementById('registrationForm'), 
+            org: document.getElementById('organization'),
+            deptSec: document.getElementById('deptSection'), 
+            deptSel: document.getElementById('department'),
+            unitSec: document.getElementById('unitSection'), 
+            unitInp: document.getElementById('unitInput'),
+            pos: document.getElementById('position'), 
+            otherPosSec: document.getElementById('otherPositionSection'),
+            otherPosInp: document.getElementById('otherPositionInput'),
+            source: document.getElementById('infoSource'), 
+            otherSrcSec: document.getElementById('otherSourceSection'),
+            otherSrcInp: document.getElementById('otherSourceInput'),
+            submitBtn: document.getElementById('submitBtn'), 
+            msgBox: document.getElementById('messageBox'),
+            emailInp: document.getElementById('field_email'),
+            emailErr: document.getElementById('emailError'),
+            summaryContent: document.getElementById('summaryContent'), 
+            summaryToggleBtn: document.getElementById('summaryToggleBtn'),
+            toggleBtnText: document.getElementById('toggleBtnText'), 
+            toggleBtnIcon: document.getElementById('toggleBtnIcon')
+        };
+
+        // 摘要切換功能
+        elements.summaryToggleBtn.addEventListener('click', () => {
+            const isExp = elements.summaryContent.classList.toggle('expanded');
+            elements.toggleBtnText.innerText = isExp ? "收合摘要 COLLAPSE" : "閱讀全文 READ MORE";
+            elements.toggleBtnIcon.style.transform = isExp ? "rotate(180deg)" : "rotate(0deg)";
+        });
+
+        // 浮動按鈕切換
+        document.getElementById('globeToggleBtn').addEventListener('click', () => {
+            const isActive = document.getElementById('floatingMenuContainer').classList.toggle('active');
+            document.getElementById('globeIcon').classList.toggle('hidden', isActive);
+            document.getElementById('closeIcon').classList.toggle('hidden', !isActive);
+        });
+
+        // 機構與科部連動
+        elements.org.addEventListener('change', function() {
+            const isNTUH = this.value.includes('台大醫院');
+            elements.deptSec.style.display = isNTUH ? 'block' : 'none';
+            elements.deptSel.required = isNTUH;
+            elements.unitSec.style.display = (!isNTUH && this.value !== '') ? 'block' : 'none';
+            elements.unitInp.required = (!isNTUH && this.value !== '');
+        });
+
+        elements.pos.addEventListener('change', function() { 
+            const isOther = this.value === '其他身分';
+            elements.otherPosSec.style.display = isOther ? 'block' : 'none'; 
+            elements.otherPosInp.required = isOther;
+        });
+
+        elements.source.addEventListener('change', function() { 
+            const isOther = this.value === '其他';
+            elements.otherSrcSec.style.display = isOther ? 'block' : 'none'; 
+            elements.otherSrcInp.required = isOther;
+        });
+
+        // 表單提交處理
+        elements.form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Email 格式簡單驗證
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(elements.emailInp.value)) {
+                elements.emailInp.classList.add('invalid-input'); 
+                elements.emailErr.style.display = 'block'; 
+                return;
+            }
+            
+            elements.submitBtn.disabled = true;
+            elements.submitBtn.innerHTML = '傳送中...';
+            
+            try {
+                // 模擬提交或實際發送到 GAS
+                if(SCRIPT_URL !== "") {
+                    await fetch(SCRIPT_URL, { 
+                        method: 'POST', 
+                        mode: 'no-cors', 
+                        body: JSON.stringify(Object.fromEntries(new FormData(elements.form).entries())) 
+                    });
+                } else {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+
+                elements.form.style.display = 'none';
+                elements.msgBox.innerHTML = `
+                    <div class="text-center py-4">
+                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-2">感謝完成報名</h2>
+                        <p class="text-slate-600 mb-8 font-medium">系統已收到您的資訊。<br>承辦單位將於演講前三天寄出提醒信。</p>
+                        <button onclick="location.reload()" class="bg-slate-100 text-slate-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-slate-200 transition-all">返回報名頁面</button>
+                    </div>`;
+                elements.msgBox.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (err) {
+                alert("伺服器連線異常，請稍後再試。"); 
+                elements.submitBtn.disabled = false;
+                elements.submitBtn.innerHTML = '提交報名表 SUBMIT';
+            }
+        });
+    </script>
+</body>
+</html>
